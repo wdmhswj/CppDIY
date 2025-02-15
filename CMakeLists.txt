@@ -11,9 +11,17 @@ set_target_properties(main PROPERTIES
 )
 
 add_executable(test_safequeue tests/test_safequeue.cpp)
-target_include_directories(test_safequeue PRIVATE ThreadPool/)
+# target_include_directories(test_safequeue PRIVATE ThreadPool/)
 
 set_target_properties(test_safequeue PROPERTIES 
     OUTPUT_NAME "test_safequeue"
+    RUNTIME_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR}/bin
+)
+
+add_executable(test_threadpool tests/test_threadpool.cpp)
+# target_include_directories(test_threadpool PRIVATE ThreadPool/)
+
+set_target_properties(test_threadpool PROPERTIES 
+    OUTPUT_NAME "test_threadpool"
     RUNTIME_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR}/bin
 )

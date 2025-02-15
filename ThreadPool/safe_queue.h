@@ -7,7 +7,7 @@ template<typename T>
 class SafeQueue {
 private:
     std::queue<T> m_queue;
-    std::mutex m_mutex;
+    mutable std::mutex m_mutex;
 public:
     SafeQueue() {}
     SafeQueue(const SafeQueue& o) = delete;
